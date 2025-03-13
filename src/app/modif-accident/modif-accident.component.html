@@ -1,0 +1,185 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+    <div class="card">
+        <div>
+            <app-entete></app-entete>
+            <h4 class="entet">CARACTERISTIQUE DE L'ACCIDENT</h4>
+        </div>
+        <form [formGroup]="modifAccident" (ngSubmit)="onSubmit()" class="container">
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="dateAccident">Date de l'accident : </label>
+                    <input name="dateAccident" id="dateAccident" formControlName="dateAccident" type="date"
+                        class="form-control">
+                    <div *ngIf="modifAccident.get('dateAccident')?. invalid && modifAccident.get('dateAccident')?.touched"
+                        class="text-danger">
+                        dateAccident est requis.
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="region">Région : </label>
+                    <input name="region" id="region" formControlName="region" type="text" class="form-control">
+                </div>
+                <div class="col">
+                    <label for="commune">Cercle : </label>
+                    <input name="commune" id="commune" formControlName="commune" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="heureAccident">Heure de l'accident : </label>
+                    <input name="heureAccident" id="heureAccident" formControlName="heureAccident" type="time"
+                        class="form-control">
+                </div>
+                <div class="col">
+                    <label for="ville">Ville : </label>
+                    <input name="ville" id="ville" formControlName="ville" type="text" class="form-control">
+                </div>
+                <div class="col">
+                    <label for="quartier">Quartier : </label>
+                    <input name="quartier" id="quartier" formControlName="quartier" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="t">
+                <hr />
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <h6>Lieu précis de l'accident</h6>
+                </div>
+                <div class="col">
+                    <h6>Totaux véhicules impliqués et victimes</h6>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="route">Route ou rue : </label>
+                    <input name="route" id="route" formControlName="route" type="text" class="form-control">
+                </div>
+                <div class="col">
+                    <label for="troncon">Tronçon : </label>
+                    <input name="troncon" id="troncon" formControlName="troncon" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="zone">Zone</label>
+                    <select class="form-select" name="zone" id="zone" formControlName="zone">
+                        <option value="#">Selectionner une zone</option>
+                        <option>Zone urbain</option>
+                        <option>Zone rurale en agglomeration</option>
+                        <option>Zone rurale hors agglomeration</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="classificationRoute">Classification de la Route : </label>
+                    <select class="form-select" name="classificationRoute" id="classificationRoute"
+                        formControlName="classificationRoute">
+                        <option value="#">Selectionner une classification de la route </option>
+                        <option>Route intérêt national (RN) </option>
+                        <option>Route intérêt régional (RR)</option>
+                        <option>Route intérêt local (RL)</option>
+                        <option>Route intérêt communal (RC)</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="intersection">Intersection : </label>
+                    <select class="form-select" name="intersection" id="intersection" formControlName="intersection">
+                        <option value="#">Selectionner une intersection</option>
+                        <option>En intersection </option>
+                        <option>Hors intersection</option>
+                        <option>Passage à niveau</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-3 ">
+                <div class="col">
+                    <label>CIRCONSTANCES RESUMEES DE L'ACCIDENT : </label>
+                    <textarea class="form-control" name="resumeAccident" id="resumeAccident"
+                        formControlName="resumeAccident"></textarea>
+                </div>
+                <div class="col">
+                    <label for="localisationGPS">Localisation G.P.S : </label>
+                    <input name="localisationGPS" id="localisationGPS" type="text" class="form-control"
+                        formControlName="localisationGPS">
+                </div>
+                <div class="col">
+                    <label for="typeJour">Type de jour : </label>
+                    <select class="form-select" name="typeJour" id="typeJour" formControlName="typeJour">
+                        <option value="#">Selectionner un type de jour </option>
+                        <option>Week-end </option>
+                        <option>Veille de fête</option>
+                        <option>Jour de fête</option>
+                        <option>Jour de marché</option>
+                        <option>Jour ordinaire</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-3">
+
+                <div class="col">
+                    <label for="etatLieux">Etat-Lieux: </label>
+                    <select class="form-select" #etatLieuxSelect name="etatLieux" formControlName="etatLieux">
+                        <option *ngFor="let etatLieu of etatLieux" [value]="etatLieu.id">{{ etatLieu.profil }}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="vehicules">Personnes: </label>
+                    <select class="form-select" #personnesSelect name="personnes[]" formControlName="personnes"
+                        multiple>
+                        <option *ngFor="let personne of personnes" [value]="personne.id">{{ personne.nom }}</option>
+                    </select>
+                    <div *ngIf="selectedPersonnes.length > 0">
+                        <h6>Personnes sélectionnées :</h6>
+                        <div *ngFor="let personne of selectedPersonnes">
+                            <div class="row mb-3">
+                                <div class="col">
+                                    {{ personne.nom }}
+                                </div>
+                                <div class="col-4">
+                                    <select class="form-select" (change)="onTypeChange($event, personne.id)">
+                                        <option value="">le type de la personne</option>
+                                        <option *ngFor="let type of types" [value]="type">{{ type }}</option>
+                                    </select>
+                                    
+                                </div>
+                                <div class="col">
+                                    <select class="form-select" (change)="onVehiculeChange($event, personne.id)">
+                                      <option value="">Sélectionner un véhicule</option>
+                                      <option *ngFor="let vehicule of vehicules" [value]="vehicule.id">{{ vehicule.numeroMatricule }}</option>
+                                    </select>
+                                  </div>
+                                    <!-- Champs de permis pour chaque personne -->
+        <div *ngIf="showPermisFields">
+            <div class="row mb-3">
+              <div class="col"></div>
+              <div class="col">
+                <label for="categoriePermis">Catégorie du permis :</label>
+                <input type="text" class="form-control" [value]="personne.categoriePermis || ''" 
+                       id="categoriePermis" (input)="onPermisChange($event, personne.id)">
+              </div>
+              <div class="col">
+                <label for="numeroPermis">Numéro du permis :</label>
+                <input type="text" class="form-control" [value]="personne.numeroPermis || ''" 
+                       id="numeroPermis" (input)="onPermisChange($event, personne.id)">
+              </div>
+            </div>
+          </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="">
+                    <button type="submit" class="btn btn-primary"
+                        [disabled]="modifAccident.invalid">ENREGISTRER</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

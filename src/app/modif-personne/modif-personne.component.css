@@ -1,0 +1,26 @@
+.card{
+    background-color: rgb(225, 252, 184);
+}
+input{
+    background-color: rgb(225, 252, 184);
+    width: 100%;
+    border-color: rgb(225, 252, 184); ;
+}
+label{
+    background-color: rgb(225, 252, 184);
+}
+select{
+    background-color: rgb(225, 252, 184);
+}
+th{
+    text-align: center;
+}
+td{
+    border: black solid 1px;
+}
+th{
+    border: black solid 1px;
+}
+table{
+    margin-top: 10px;
+}

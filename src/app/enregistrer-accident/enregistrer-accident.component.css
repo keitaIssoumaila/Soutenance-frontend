@@ -1,0 +1,44 @@
+.card{
+    background-color: rgb(225, 252, 184);
+    border-color: black;
+}
+.col input{
+    background-color: rgb(225, 252, 184);
+    border-color: black;
+    border-color: 30px;
+}
+.col option{
+    background-color: rgb(225, 252, 184);
+    border-color: black;
+    border-color: 30px;
+}
+.col option:active, .col option:focus{
+    background-color: rgb(255, 13, 0) !important;
+    border-color: rgb(255, 0, 0) !important;
+    border-color: 30px;
+}
+.col select{
+    background-color: rgb(225, 252, 184);
+    border-color: black;
+    border-color: 30px;
+}
+.col textarea{
+    background-color: rgb(225, 252, 184);
+    border-color: black;
+    border-color: 30px;
+}
+.t hr{
+    color: black;
+}
+.entet{
+    border:black solid 2px;
+    text-align: center;
+}
+.tom-select {
+    z-index: 9999; /* Assurez-vous que la liste déroulante est au-dessus des autres éléments */
+  }
+  
+  .tom-select .ts-dropdown {
+    display: block; /* Assurez-vous que la liste déroulante est visible */
+  }
+  

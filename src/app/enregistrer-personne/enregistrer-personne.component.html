@@ -1,0 +1,58 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+    <div class="card">
+        <div >
+            <app-entete></app-entete>
+            <h4 class="entet">PERSONNES IMPLIQUEES DANS L'ACCIDENT</h4>
+            </div>
+            <form [formGroup]="enregistrerPersonne" (ngSubmit)="onSubmit()" class="container">
+                <table class="table mb-3">
+                    <tr>
+                        <td><label class="form-label" for="nom">Nom</label></td>
+                        <td><input name="nom" class="form-input" type="text" id="nom" formControlName="nom"></td>
+                        <div *ngIf="enregistrerPersonne.get('nom')?. invalid && enregistrerPersonne.get('nom')?.touched" class="text-danger">
+                            Nom est requis.
+                        </div>
+                    </tr>
+                    <tr>
+                        <td><label class="form-label" for="prenom">Prenom</label></td>
+                        <td><input name="prenom" class="form-input" type="text" id="prenom" formControlName="prenom"></td>
+                        <td *ngIf="enregistrerPersonne.get('prenom')?. invalid && enregistrerPersonne.get('prenom')?.touched" class="text-danger">
+                            Prenom est requis.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label class="form-label" for="datenaise">Date de naissance</label></td>
+                        <td><input name="datenaise" class="form-input" type="date" id="datenaise" formControlName="datenaise"></td>
+                        <div *ngIf="enregistrerPersonne.get('datenaise')?. invalid && enregistrerPersonne.get('datenaise')?.touched" class="text-danger">
+                            Datenais est requis.
+                        </div>
+                    </tr>
+                    <tr>
+                        <td><label class="form-label" for="sexe">Sexe</label></td>
+                        <td> 
+                            <select class="form-select" name="sexe" id="sexe" formControlName="sexe">
+                                <option value="#">Selectionner</option>
+                                <option>Masculin</option>
+                                <option>Féminin</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label class="form-label" for="profession">Profession</label></td>
+                        <td><input name="profession" class="form-input" type="text" id="profession" formControlName="profession"></td>
+                        <div *ngIf="enregistrerPersonne.get('profession')?. invalid && enregistrerPersonne.get('profession')?.touched" class="text-danger">
+                            professionrequis.
+                        </div>
+                    </tr>
+                </table>
+                <div class="row mb-3">
+                    <div class="">
+                        <button type="submit" class="btn btn-primary" [disabled]="enregistrerPersonne.invalid">ENREGISTRER</button>
+                    </div>
+                </div>
+            </form>
+    </div>
+</div>
+
+

@@ -1,0 +1,93 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">    
+<div class="card">
+    <div >
+        <app-entete></app-entete>
+    <h4 class="entet">ETAT DES LIEUX DE L'ACCIDENT</h4>
+    </div>
+        <form [formGroup]="enregistrerLieux" (ngSubmit)="onSubmit()" class="container mt-3">
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="lumiere">Lumière</label>
+                    <select class="form-select" name="lumiere" id="lumiere" formControlName="lumiere">
+                        <option value="#">Selectionner une Lumière</option>
+                        <option value="Plein jour">Plein jour</option>
+                        <option value="Nuit sans éclairage public">Nuit sans éclairage public</option>
+                        <option value="Nuit avec éclairage public">Nuit avec éclairage public</option>
+                    </select>
+                    
+                </div>
+                <div class="col">
+                    <label for="conditionAtmosphe">Condition atmospherique : </label>
+                    <select class="form-select" name="conditionAtmosphe" id="conditionAtmosphe" formControlName="conditionAtmosphe">
+                        <option value="#">Selectionner une condition atmosphérique </option>
+                        <option value="Normal">Normal</option>
+                        <option value="Pluie">Pluie</option>
+                        <option value="Tempête">Tempête</option>
+                        <option value="Brouillard">Brouillard</option>
+                        <option value="Poussière ou fumée">Poussière ou fumée</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="trace">Tracé : </label>
+                    <select class="form-select" name="trace" id="trace" formControlName="trace">
+                        <option value="#">Selectionner un Tracé</option>
+                        <option value="Ligne droit">Ligne droit </option>
+                        <option value="Virage">Virage</option>
+                        <option value="Chaussée rétrécie">Chaussée rétrécie</option>
+                   </select>
+                </div>
+                <div class="col">
+                    <label for="etatChause">Etat Chaussée : </label>
+                    <select class="form-select" name="etatChause" id="etatChause" formControlName="etatChause">
+                        <option value="#">Selectionner un Etat Chaussée</option>
+                        <option value="Route bitumée en bon état">Route bitumée en bon état</option>
+                        <option value="Route bitumée en mauvais état">Route bitumée en mauvais état</option>
+                        <option value="Pavés">Pavés</option>
+                        <option value="Route en chantier">Route en chantier</option>
+                        <option value="Route en terre en bon état">Route en terre en bon état</option>
+                        <option value="Route en terre en mauvais état">Route en terre en mauvais état</option>
+                   </select>
+                </div>
+            </div>
+            <div class="row mb-3 ">
+                <div class="col">
+                    <label for="profil">Profil : </label>
+                    <select class="form-select" name="profil" id="profil" formControlName="profil">
+                        <option value="#">Selectionner un profil</option>
+                        <option value="Plat">Plat</option>
+                        <option value="Pente">Pente</option>
+                        <option value="Bas de côte">Bas de côte</option>
+                        <option value="Sommet de côté">Sommet de côté</option>
+                   </select>
+                </div>
+                <div class="col">
+                    <label for="marquageSol">Marquage au sol : </label>
+                    <select class="form-select" name="marquageSol" id="marquageSol" formControlName="marquageSol">
+                        <option value="#">Selectionner marquage au sol</option>
+                        <option value="Existant">Existant</option>
+                        <option value="Inexistant">Inexistant</option>
+                   </select>
+                </div>
+                <div class="col">
+                    <label for="conditionCarrefour">Condition carrefour (accident en intersection) : </label>
+                    <select class="form-select" name="conditionCarrefour" id="conditionCarrefour" formControlName="conditionCarrefour">
+                        <option value="#">Selectionner contrôle carrefour</option>
+                        <option value="Policier ou gendarme">Policier ou gendarme</option>
+                        <option value="Feux en fonctionnement">Feux en fonctionnement</option>
+                        <option value="Feux clignotant ou éteints">Feux clignotant ou éteints</option>
+                        <option value="Panneau de stop">Panneau de stop</option>
+                        <option value="Cédez le passage">Cédez le passage</option>
+                        <option value="Priorité">Priorité</option>
+                        <option value="Pas de panneaux">Pas de panneaux</option>
+                   </select>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary" [disabled]="enregistrerLieux.invalid">ENREGISTRER</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

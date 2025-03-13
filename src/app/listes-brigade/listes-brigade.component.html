@@ -1,0 +1,34 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+    <div class="card">
+        <div >
+            <button class="bt btn-success mt-2 mb-2" routerLink="/creerBrigade">Ajouter+</button>
+            <h4 class="ente">LISTES DES BRIGADES</h4>
+            </div>
+            <table class="table text-center mb-3 table-bordered">
+                <thead class="custom-header">
+                    <tr>
+                        <th>ID</th>
+                        <th>NOM</th>
+                        <th>QUARTIER</th>
+                        <th>COMMUNE</th>
+                        <th>Modifier</th>
+                        <th>Supprimer</th>
+                    </tr>
+                    <tbody>
+                        <tr *ngFor="let brigade of brigades">
+                            <td>{{brigade.id}}</td>
+                            <td>{{brigade.nom}}</td>
+                            <td>{{brigade.quartier}}</td>
+                            <td>{{brigade.commune}}</td>
+                            <td><button routerLink="/modif-brigade/{{brigade.id}}" class="btn-icon">
+                                <i class="fas fa-edit"></i>
+                            </button></td>
+                            <td><button (click)="deleteBrigade(brigade.id)" class="btn-icon">
+                                <i class="fas fa-trash"></i>
+                            </button></td> 
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>

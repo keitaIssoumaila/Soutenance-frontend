@@ -1,0 +1,55 @@
+<app-nav-bar></app-nav-bar>
+<button class="bt btn-success  mb-2" routerLink="/creerAccident">Ajouter+</button>
+<div class="table-responsive">
+
+    <table class="table text-center mb-3 table-bordered">
+        <thead class="custom-header">
+            <tr>
+                <th colspan="19">LISTES DES CARACTERISTIQUE DE L'ACCIDENT</th>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <th>Heure</th>
+                <th>Commune</th>
+                <th>Quartier</th>
+                <th>Region</th>
+                <th>Intersection</th>
+                <th>Zone</th>
+                <th>Classification Route</th>
+                <th>Localisation GPS</th>
+                <th>Resumées</th>
+                <th>Type de jour</th>
+                <th>Route</th>
+                <th>Tronçon</th>
+                <th>Modifier</th>
+                <th>Supprimer</th>
+                <th>Détail</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let accident of accidents">
+                <td>{{accident.dateAccident}}</td>
+                <td>{{accident.heureAccident}}</td>
+                <td>{{accident.commune}}</td>
+                <td>{{accident.quartier}}</td>
+                <td>{{accident.region}}</td>
+                <td>{{accident.intersection}}</td>
+                <td>{{accident.zone}}</td>
+                <td>{{accident.classificationRoute}}</td>
+                <td>{{accident.localisationGPS}}</td>
+                <td>{{accident.resumeAccident}}</td>
+                <td>{{accident.typeJour}}</td>
+                <td>{{accident.route}}</td>
+                <td>{{accident.troncon}}</td>
+                <!-- <td>{{accident.vehicules.length}}</td>
+                <td>{{accident.personnes.length}}</td> -->
+                <td><button routerLink="/modif-accident/{{accident.id}}" class="btn-icon" title="Modifier">
+                    <i class="fas fa-edit"></i>
+                </button></td>
+                <td><button (click)="deleteAccident(accident.id)" class="btn-icon" title="Supprimer">
+                    <i class="fas fa-trash"></i>
+                </button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

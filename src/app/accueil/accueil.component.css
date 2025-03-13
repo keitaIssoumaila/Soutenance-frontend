@@ -1,0 +1,23 @@
+#logo{
+    width:10%;
+    height: 15%;
+    margin-top: 0%;
+    margin-left: 9%;
+}
+h1{
+    text-transform:uppercase;
+	text-align:center;
+}
+.m{
+    width:10%;
+    height: 15%;
+    margin-top: -2%;
+    margin-left: 65%; 
+}
+.li{
+    width:100%;
+    height: 100%; 
+}
+.h1{
+    font-size: medium;
+}

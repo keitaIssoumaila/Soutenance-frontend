@@ -1,0 +1,68 @@
+
+
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Gestion Accident</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse custom-text-transform" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li><a style="color: white;" class="nav-link" routerLink="/accueil">Accueil</a></li>
+        <li class="nav-item dropdown">
+          <a style="color: white;" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Accident
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/listesAccident">Listes</a></li>
+            <li><a class="dropdown-item" routerLink="/creerAccident">Ajouter</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a style="color: white;" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Vehicule 
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/listesVehicules">Listes</a></li>
+            <li><a class="dropdown-item" routerLink="/creerVehicules">Ajouter</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a style="color: white;" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Etat-Lieux
+          </a>
+          <ul class="dropdown-menu ">
+            <li><a class="dropdown-item" routerLink="/listesLieux">Listes</a></li>
+            <li><a class="dropdown-item" routerLink="/creerLieux">Ajouter</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a style="color: white;" class="nav-link dropdown-toggle me-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Personnes
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item " routerLink="/listesPersonnes">Listes</a></li>
+            <li><a class="dropdown-item" routerLink="/creerPersonne">Ajouter</a></li>
+            <li><a class="dropdown-item" routerLink="/creerBrigade">Ajouter</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a style="color: white;" class="nav-link dropdown-toggle me-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Statistique
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/Statistique">Vehicule Accident</a></li>
+            <!-- <li><a class="dropdown-item" routerLink="/creerPersonne">Ajouter</a></li> -->
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" (input)="onSearch($event)">
+        <button style="color: white;" class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<br>
+<br>
+<br>

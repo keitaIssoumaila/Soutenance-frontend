@@ -1,0 +1,40 @@
+
+<app-nav-bar></app-nav-bar>
+<div class="card">
+    <div >
+        <button class="bt btn-success mt-2 mb-2" routerLink="/creerLieux">Ajouter+</button>
+        <h4 class="ente">LISTES DES ETATS DE LIEUX DES ACCIDENTS</h4>
+        </div>
+            <table class="table text-center mb-3 table-bordered">
+                <thead class="custom-header">
+                <tr > 
+                    <th>Lumière</th>
+                    <th>Condition Atmosphe</th>
+                    <th>Trace</th>
+                    <th>EtatChause</th>
+                    <th>profil</th>
+                    <th>Marquage Sol</th>
+                    <th>Condition Carrefour</th>
+                    <th>Modifier</th>
+                    <th>Supprimer</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let etatLieux of etatLieux">
+                        <td>{{etatLieux.lumiere}}</td>
+                        <td>{{etatLieux.conditionAtmosphe}}</td>
+                        <td>{{etatLieux.trace}}</td>
+                        <td>{{etatLieux.etatChause}}</td>
+                        <td>{{etatLieux.profil}}</td>
+                        <td>{{etatLieux.marquageSol}}</td>
+                        <td>{{etatLieux.conditionCarrefour}}</td>
+                        <td><button routerLink="/modif-lieux/{{etatLieux.id}}"class="btn-icon">
+                            <i class="fas fa-edit"></i>
+                        </button></td>
+                        <td><button (click)="deleteEtatLieux(etatLieux.id)" class="btn-icon">
+                            <i class="fas fa-trash"></i>
+                        </button></td> 
+                    </tr>
+                </tbody>
+            </table>
+        </div>

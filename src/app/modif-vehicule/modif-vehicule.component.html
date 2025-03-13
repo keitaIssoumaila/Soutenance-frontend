@@ -1,0 +1,122 @@
+<div class="container">
+    <div class="card">
+        <div >
+            <h4 class="border border-2 border-black text-center">VEHICULES IMPLIQUES</h4>
+            </div>
+            <form [formGroup]="modifVehicule" (ngSubmit)="onSubmit()">
+                <table class="table mb-3">
+                    <tr>
+                        <td><label class="form-label" for="numeroMatricule">Numéro d'imatriculation</label></td>
+                        <td><input name="numeroMatricule" class="form-input" type="text" id="numeroMatricule" formControlName="numeroMatricule"></td>
+                        <div *ngIf="modifVehicule.get('nom')?. invalid && modifVehicule.get('nom')?.touched" class="text-danger">
+                            Nom est requis.
+                        </div>
+                    </tr>
+                    <tr>
+                        <td><label class="form-label" for="genre">Genre</label></td>
+                        <td><input name="genre" class="form-input" type="text" id="genre" formControlName="genre"></td>
+                    </tr>
+                    <tr>
+                        <td><label class="form-label" for="appartenance">Appartenance</label></td>
+                        <td><input name="appartenance" class="form-input" type="text" id="appartenance" formControlName="appartenance"></td>
+                    </tr>
+                    <tr>
+                        <td><label class="form-label" for="validiteControleTechnique">Validité contrôle technique</label></td>
+                        <td> 
+                            <select class="form-select" name="validiteControleTechnique" id="validiteControleTechnique" formControlName="validiteControleTechnique">
+                                <option value="#">Selectionner</option>
+                                <option>Oui</option>
+                                <option>Non</option>
+                        
+                            </select>
+                        </td>
+                    <tr>
+                        <td><label class="form-label" for="validiteAssurance">Validité assurance</label></td>
+                        <td> 
+                            <select class="form-select" name="validiteAssurance" id="validiteAssurance" formControlName="validiteAssurance">
+                                <option value="#">Selectionner</option>
+                                <option>Oui</option>
+                                <option>Non</option>
+                        
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label class="form-label" for="etatGeneral">Etat General</label></td>
+                        <td> 
+                            <select class="form-select" name="etatGeneral" id="etatGeneral" formControlName="etatGeneral">
+                                <option value="#">Selectionner</option>
+                                <option>Bon</option>
+                                <option>Mauvais</option>
+                        
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label class="form-label" for="pneux">Pneux</label></td>
+                        <td> 
+                            <select class="form-select" name="pneux" id="pneux" formControlName="pneux">
+                                <option value="#">Selectionner</option>
+                                <option>Bon</option>
+                                <option>Mauvais</option>
+                        
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label class="form-label" for="feux">Feux</label></td>
+                        <td> 
+                            <select class="form-select" name="feux" id="feux" formControlName="feux">
+                                <option value="#">Selectionner</option>
+                                <option>Bon</option>
+                                <option>Mauvais</option>
+                        
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label class="form-label" for="typeChargement">Type de chargement</label></td>
+                        <td> 
+                            <select class="form-select" name="typeChargement" id="typeChargement" formControlName="typeChargement">
+                                <option value="#">Selectionner</option>
+                                <option>Personne</option>
+                                <option>Marchandise</option>
+                                <option>Mixe</option>
+                                <option>Aucun</option>
+                        
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label class="form-label" for="volumeChargement">Volume de chargement</label></td>
+                        <td> 
+                            <select class="form-select" name="volumeChargement" id="volumeChargement" formControlName="volumeChargement">
+                                <option value="#">Selectionner</option>
+                                <option>Normal</option>
+                                <option>Excessif</option>
+                                <option>Aucun</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label class="form-label" for="degatMateriel">Dégat matériel subis par le véhicule</label></td>
+                        <td> 
+                            <select class="form-select" name="degatMateriel" id="degatMateriel" formControlName="degatMateriel">
+                                <option value="#">Selectionner</option>
+                                <option>Aucun</option>
+                                <option>Peu importants</option>
+                                <option>importants</option>
+                                <option>Très important</option>
+                                <option>Hors Véhicule hors usage</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <div class="row mb-3">
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary" [disabled]="modifVehicule.invalid">ENREGISTRER</button>
+                    </div>
+                </div>
+            </form>
+    </div>
+</div>

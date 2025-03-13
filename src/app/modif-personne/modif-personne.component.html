@@ -1,0 +1,90 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+    <div class="card">
+        <div >
+            <h4 class="border border-2 border-black text-center">PERSONNES IMPLIQUEES DANS L'ACCIDENT</h4>
+            </div>
+            <form [formGroup]="modifPersonne" (ngSubmit)="onSubmit()" class="container">
+                <table class="table mb-3">
+                    <tr>
+                        <td><label for="type">Type de personne</label></td>
+                        <td>
+                            <select class="form-select" (change)="onTypeChange(getValue($event))" name="type" id="type" formControlName="type">
+                                <option value="#">Selectionner</option>
+                                <option>Conducteur</option>
+                                <option>Pieton</option>
+                                <option>Passager</option>
+                                <option>Propriétaire</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label class="form-label" for="nom">Nom</label></td>
+                        <td><input name="nom" class="form-input" type="text" id="nom" formControlName="nom" ></td>
+                        <div *ngIf="modifPersonne.get('nom')?. invalid && modifPersonne.get('nom')?.touched" class="text-danger">
+                            Nom est requis.
+                        </div>
+                    </tr>
+                    <tr>
+                        <td><label class="form-label" for="prenom">Prenom</label></td>
+                        <td><input name="prenom" class="form-input" type="text" id="prenom" formControlName="prenom" ></td>
+                        <td *ngIf="modifPersonne.get('prenom')?. invalid && modifPersonne.get('prenom')?.touched" class="text-danger">
+                            Prenom est requis.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label class="form-label" for="datenaise">Date de naissance</label></td>
+                        <td><input name="datenaise" class="form-input" type="date" id="datenaise" formControlName="datenaise"></td>
+                        <div *ngIf="modifPersonne.get('datenaise')?. invalid && modifPersonne.get('datenaise')?.touched" class="text-danger">
+                            Datenais est requis.
+                        </div>
+                    </tr>
+                    <tr>
+                        <td><label class="form-label" for="sexe">Sexe</label></td>
+                        <td> 
+                            <select class="form-select" name="sexe" id="sexe" formControlName="sexe">
+                                <option value="#">Selectionner</option>
+                                <option>Masculin</option>
+                                <option>Féminin</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label class="form-label" for="gravite">Gravité de choc du conducteur</label></td>
+                        <td> 
+                            <select class="form-select" name="gravite" id="gravite" formControlName="gravite">
+                                <option value="#">Selectionner</option>
+                                <option>Décédé</option>
+                                <option>Blessé leger</option>
+                                <option>Blessé grave</option>
+                                <option>Indemne</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label class="form-label" for="profession">Profession</label></td>
+                        <td><input name="profession" class="form-input" type="text" id="profession" formControlName="profession"></td>
+                        <div *ngIf="modifPersonne.get('profession')?. invalid && modifPersonne.get('profession')?.touched" class="text-danger">
+                            professionrequis.
+                        </div>
+                    </tr>
+                    <tr *ngIf="type == 'Conducteur'" >
+                        <td><label class="form-label" for="categoriePermis">Gategorie permis </label></td>
+                        <td><input name="categoriePermis" class="form-input" type="text" id="categoriePermis" formControlName="categoriePermis"></td>
+
+                    </tr>
+                    <tr *ngIf="type == 'Conducteur'" >
+                        <td><label class="form-label" for="numeroPermis">Numero du permis de conduire</label></td>
+                        <td><input name="numeroPermis" class="form-input" type="text" id="numeroPermis" formControlName="numeroPermis"></td>
+                    </tr>
+                </table>
+                <div class="row mb-3">
+                    <div class="">
+                        <button type="submit" class="btn btn-primary" [disabled]="modifPersonne.invalid">ENREGISTRER</button>
+                    </div>
+                </div>
+            </form>
+    </div>
+</div>
+
+

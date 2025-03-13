@@ -1,0 +1,31 @@
+.card{
+    background-color: rgb(225, 252, 184);
+    border-color: black;
+}
+.col input{
+    background-color: rgb(225, 252, 184);
+    border-color: black;
+    border-color: 30px;
+}
+.col option{
+    background-color: rgb(225, 252, 184);
+    border-color: black;
+    border-color: 30px;
+}
+.col select{
+    background-color: rgb(225, 252, 184);
+    border-color: black;
+    border-color: 30px;
+}
+.col textarea{
+    background-color: rgb(225, 252, 184);
+    border-color: black;
+    border-color: 30px;
+}
+.t hr{
+    color: black;
+}
+.entet{
+    border:black solid 2px;
+    text-align: center;
+}

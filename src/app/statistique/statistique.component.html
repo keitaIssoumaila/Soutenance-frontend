@@ -1,0 +1,20 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+    <h2 class="ente">La statistique</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Numero Matricule</th>
+          <th>Marque</th>
+          <th>Nombre d'Accidents</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vehicule of vehicules">
+          <td>{{ vehicule.numeroMatricule }}</td>
+          <td>{{ vehicule.genre }}</td>
+          <td>{{ vehicule.accidents }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

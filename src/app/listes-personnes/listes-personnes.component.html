@@ -1,0 +1,36 @@
+<app-nav-bar></app-nav-bar>
+<div class="card">
+    <div >
+        <button class="bt btn-success mt-2 mb-2" routerLink="/creerPersonne">Ajouter+</button>
+        <h4 class="ente">LISTES DES PERSONNES IMPLIQUES DANS L'ACCIDENT</h4>
+        </div>
+            <table class="table text-center mb-3 table-bordered">
+                <thead class="custom-header">
+                <tr> 
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Date de naissance</th>
+                    <th>Profession</th>
+                    <th>Sexe</th>
+                    <th>Modifier</th>
+                    <th>Supprimer</th>
+                    <th>Détail</th>
+                </tr>
+            </thead>
+                <tbody>
+                    <tr *ngFor="let personne of personnes">
+                        <td>{{personne.nom}}</td>
+                        <td>{{personne.prenom}}</td>
+                        <td>{{personne.datenaise}}</td>
+                        <td>{{personne.profession}}</td>
+                        <td>{{personne.sexe}}</td>
+                        <td><button routerLink="/modif-personne/{{personne.id}}" class="btn-icon">
+                            <i class="fas fa-edit"></i>
+                        </button></td>
+                        <td><button (click)="deletePersonne(personne.id)" class="btn-icon">
+                            <i class="fas fa-trash"></i>
+                        </button></td>  
+                    </tr>
+                </tbody>
+            </table>
+        </div>

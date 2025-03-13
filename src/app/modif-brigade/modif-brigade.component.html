@@ -1,0 +1,43 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+    <div class="card mb-3">
+    <div >
+        <h4 class="border border-2 border-black text-center">FORMULAIRE D'AJOUT BRIGADE</h4>
+    </div>
+    <form [formGroup]="modifBrigade" (ngSubmit)="onSubmit()" class="container">
+        <div class="row mb-3">
+            <div class="col">
+                <label for="id">Identifient</label>
+                <input name="id" type="text" id="id" formControlName="id" class="form-control" [value]="brigade.id" readonly>
+            </div>
+            <div class="col">
+                <label for="nom">Nom</label>
+                <input name="nom" type="text" id="nom" formControlName="nom" class="form-control" [value]="brigade.nom">   
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <label for="quartier">Quartier</label>
+                <input name="quartier" type="text" id="quartier" formControlName="quartier" class="form-control" [value]="brigade.quartier">
+            </div>
+            <div class="col">
+                <label for="commune">Commune</label>
+                <input name="commune" type="text" id="commune" formControlName="commune" class="form-control" [value]="brigade.commune">   
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary" [disabled]="modifBrigade.invalid">ENREGISTRER</button>
+            </div>
+        </div>         
+    </form>
+</div>
+</div>
+
+
+
+
+
+
+
+

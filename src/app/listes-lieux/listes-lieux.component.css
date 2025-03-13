@@ -1,0 +1,32 @@
+.custom-header{
+    background-color: rgb(136, 202, 232);
+    color: black;
+}
+table.custom-table th {
+    text-align: center; /* centrer le texte des entêtes de colonne */
+    border: 1px solid;
+  }
+table.custom-table td{
+    text-align: center;
+    border: 1px solid;
+}
+.custom-header{
+  background-color: rgb(136, 202, 232);
+  color: black;
+}
+.ente{
+    background-color: rgb(136, 202, 232);
+    text-align: center;
+    margin-bottom: 0;
+}
+.btn-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px; /* Taille de l'icône */
+    color: #007bff; /* Couleur de l'icône */
+  }
+  
+  .btn-icon:hover {
+    color: #ee1b0f; /* Couleur de l'icône au survol */
+  }

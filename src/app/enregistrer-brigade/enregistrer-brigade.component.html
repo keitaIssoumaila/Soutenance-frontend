@@ -1,0 +1,38 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+    <div class="card mb-3">
+    <div >
+        <app-entete></app-entete>
+        <h4 class="entet">FORMULAIRE D'AJOUT BRIGADE</h4>
+    </div>
+    <form [formGroup]="enregistrerBrigade" (ngSubmit)="onSubmit()" class="container">
+        <div class="row mb-3">
+            <div class="col">
+                <label for="nom">Nom</label>
+                <input name="nom" type="text" id="nom" formControlName="nom" class="form-control">
+                <div *ngIf="enregistrerBrigade.get('nom')?. invalid && enregistrerBrigade.get('nom')?.touched" class="text-danger">
+                    Nom est requis.
+                </div>   
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <label for="quartier">Quartier</label>
+                <input name="quartier" type="text" id="quartier" formControlName="quartier" class="form-control">
+                <div *ngIf="enregistrerBrigade.get('commune')?. invalid && enregistrerBrigade.get('commune')?.touched" class="text-danger">
+                    Commune est requis.
+                </div> 
+            </div>
+            <div class="col">
+                <label for="commune">Commune</label>
+                <input name="commune" type="text" id="commune" formControlName="commune" class="form-control">   
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary" [disabled]="enregistrerBrigade.invalid">ENREGISTRER</button>
+            </div>
+        </div>           
+    </form>
+</div>
+</div>
