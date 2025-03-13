@@ -5,11 +5,12 @@ import { PersonneServiceService } from '../personne-service.service';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NavBarComponent } from '../nav-bar/nav-bar.component';
+import { EnteteComponent } from '../entete/entete.component';
 
 @Component({
   selector: 'app-modif-personne',
   standalone: true,
-  imports: [FormsModule, NavBarComponent, ReactiveFormsModule, CommonModule, HttpClientModule],
+  imports: [FormsModule, NavBarComponent, ReactiveFormsModule, CommonModule, HttpClientModule, EnteteComponent],
   templateUrl: './modif-personne.component.html',
   styleUrl: './modif-personne.component.css'
 })

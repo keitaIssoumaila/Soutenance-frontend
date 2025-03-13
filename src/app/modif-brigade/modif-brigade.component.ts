@@ -4,12 +4,13 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NavBarComponent } from '../nav-bar/nav-bar.component';
+import { EnteteComponent } from '../entete/entete.component';
 
 
 @Component({
     selector: 'app-modif-brigade',
     standalone: true,
-    imports: [ReactiveFormsModule,NavBarComponent, FormsModule, HttpClientModule, CommonModule],
+    imports: [ReactiveFormsModule, EnteteComponent, NavBarComponent, FormsModule, HttpClientModule, CommonModule],
     templateUrl: './modif-brigade.component.html',
     styleUrl: './modif-brigade.component.css'
 })

@@ -3,11 +3,12 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { EnteteComponent } from '../entete/entete.component';
 
 @Component({
   selector: 'app-modif-vehicule',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, CommonModule, HttpClientModule],
+  imports: [FormsModule, ReactiveFormsModule, CommonModule, HttpClientModule, EnteteComponent],
   templateUrl: './modif-vehicule.component.html',
   styleUrl: './modif-vehicule.component.css'
 })

@@ -4,11 +4,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NavBarComponent } from '../nav-bar/nav-bar.component';
+import { EnteteComponent } from '../entete/entete.component';
 
 @Component({
   selector: 'app-modif-lieux',
   standalone: true,
-  imports: [FormsModule, NavBarComponent, ReactiveFormsModule, HttpClientModule, CommonModule ],
+  imports: [FormsModule, NavBarComponent, ReactiveFormsModule, HttpClientModule, CommonModule, EnteteComponent ],
   templateUrl: './modif-lieux.component.html',
   styleUrl: './modif-lieux.component.css'
 })
